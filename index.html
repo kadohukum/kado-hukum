@@ -76,11 +76,12 @@ footer{text-align:center;padding:20px;background:#a90018;color:#ffe7e7;font-size
 @media(max-width:600px){.hero{padding-top:18px;min-height:570px}.crest{width:75px;height:92px}h1{font-size:clamp(2.4rem,12vw,4.2rem)}.title-ribbon{padding:9px 20px}.org{font-size:.9rem}.main-present-wrap{transform:scale(.88);margin-top:12px;margin-bottom:-5px}.catalog{padding:65px 12px 40px;border-radius:40% 40% 0 0/2% 2% 0 0}.gift-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 10px}.category-label{font-size:.72rem;padding:6px}.mini-gift{transform:scale(.9)}.catalog-intro{font-size:.9rem}}
 </style>
 
-<meta name="theme-color" content="#a90013">
-<meta name="description" content="Katalog Digital Dokumen Hukum internal Bagian Hukum Setda Kabupaten Maluku Tengah">
+<meta name="theme-color" content="#b90018">
+<meta name="description" content="KADO HUKUM — Katalog Digital Dokumen Hukum internal Bagian Hukum Setda Kabupaten Maluku Tengah.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
+
 </head>
 <body>
 <header class="hero">
@@ -176,7 +177,7 @@ footer{text-align:center;padding:20px;background:#a90018;color:#ffe7e7;font-size
       <span class="category-label"><b>8</b><span>Dokumen Pendukung e-Harmonisasi</span></span>
     </button>
 
-    <button class="gift-card" style="--gift:#ff69b4;--pale:#ffe4f0;--delay:450ms" data-category="9" aria-label="Buka kategori 9">
+    <button class="gift-card" style="--gift:#D4A017;--pale:#FFF1C2;--delay:450ms" data-category="9" aria-label="Buka kategori 9">
       <span class="mini-gift" aria-hidden="true">
         <span class="mini-lid"></span><span class="mini-box"></span>
         <span class="mini-ribbon-v"></span><span class="mini-ribbon-h"></span>
@@ -194,7 +195,7 @@ footer{text-align:center;padding:20px;background:#a90018;color:#ffe7e7;font-size
       <span class="category-label"><b>10</b><span>Dokumen Pendukung e-Perda</span></span>
     </button>
 
-    <button class="gift-card" style="--gift:#6d5bd0;--pale:#e9e4ff;--delay:495ms" data-category="11" aria-label="Buka kategori 11">
+    <button class="gift-card" style="--gift:#1E3A8A;--pale:#DBEAFE;--delay:495ms" data-category="11" aria-label="Buka kategori 11">
       <span class="mini-gift" aria-hidden="true">
         <span class="mini-lid"></span><span class="mini-box"></span>
         <span class="mini-ribbon-v"></span><span class="mini-ribbon-h"></span>
@@ -322,9 +323,11 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementB
 </script>
 
 <script>
-if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(err => console.warn('Service worker gagal didaftarkan:', err)));
+// PWA: service worker aktif setelah aplikasi dipublikasikan melalui HTTPS atau localhost.
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  window.addEventListener('load', () => { navigator.serviceWorker.register('./sw.js').catch(err => console.warn('Service worker belum aktif:', err)); });
 }
 </script>
+
 </body>
 </html>
